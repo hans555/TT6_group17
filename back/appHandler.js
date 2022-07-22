@@ -72,10 +72,10 @@ async function handleGetWallet(req, res) {
   const body = jsonic(req.body);
   try {
     const [rows, fields] = await promisePool.query(
-      "SELECT rate from exchange_rate"
+      "SELECT user_id, name from wallet"
     );
     console.log(rows);
-    res.status(200).json({});
+    res.status(200).json({rows});
   } catch (err) {
     console.log(err);
     res.status(400).end();
