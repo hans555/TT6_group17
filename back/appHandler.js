@@ -11,8 +11,6 @@ async function handleLogin(req, res) {
   } catch (err) {
     console.log(err);
     res.status(400).end();
-  } finally {
-    client.release();
   }
 }
 
