@@ -12,6 +12,4 @@ const exchangeRate = ({ exchangeRatesList }) => {
   );
 }
 
-
-
 export default exchangeRate;
