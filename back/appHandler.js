@@ -4,9 +4,8 @@ const jsonic = require("jsonic");
 async function handleLogin(req, res) {
   const body = jsonic(req.body);
   try {
-    const [rows, fields] = await promisePool.query("SELECT 1");
+    const [rows, fields] = await promisePool.query("SELECT rate from exchange_rate");
     console.log(rows);
-    console.log(fields);
     res.status(200).json({});
   } catch (err) {
     console.log(err);
