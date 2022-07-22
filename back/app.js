@@ -7,6 +7,7 @@ const { handleLogin } = require("./appHandler")
 
 app.use(cors())
 app.use(express.json())
+
 app.post("/login", handleLogin)
 
 app.listen(port, () => {
