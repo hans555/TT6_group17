@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <label for="base-curr">Base currency</label>
+        <input type="text" name="base-curr" required maxlength="3", id="base-curr">
+        <label for="amt">amount</label>
+        <input type="number" name="amt" required, id="amt">
+        <label for="exch-curr">The currency to convert into</label>
+        <input type="text" name="exch-curr" required, id="exch-curr">
+        <button name="submit-btn" onclick="getInputValue();">Submit</button>
+
+        <script>
+            let base_curr = document.getElementsById("base-curr");
+            let amt = document.getElementsById("amt");
+            let exchange = document.getElementsById("exch-curr")
+
+            console.log(base_curr)
+            console.log(amt)
+            console.log(exchange)
+        </script>
+    </body>
+
+
+</html>
