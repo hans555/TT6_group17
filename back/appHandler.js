@@ -95,8 +95,6 @@ async function handleGetWallet(req, res) {
   }
 }
 
-
-
 //Functionality 6
 async function handleDeleteWallet(req, res) {
   const body = jsonic(req.body);
