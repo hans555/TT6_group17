@@ -31,6 +31,18 @@ where multicurrency.user.username = 'user101'
 AND  multicurrency.currency.currency = 'CAD';
 
 
+=======
+UPDATE `currency`
+SET amount = amount - {value}
+WHERE wallet_id = {wallet_id} and currency = {debit_currency}
+
+UPDATE `currency`
+SET amount = amount + {value}
+WHERE wallet_id = {wallet_id} and currency = {credit_currency}
+>>>>>>> 7320c90 (Modified sql file)
+
+
+
 
 
 
