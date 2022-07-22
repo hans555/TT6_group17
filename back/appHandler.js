@@ -38,13 +38,14 @@ async function handleGetExchangeRate(req, res) {
 
 //Functionality 3
 async function handleGetCurrencyWallet(req, res) {
-  const body = jsonic(req.body);
+  const body  = jsonic(req.body);
   try {
     const [rows, fields] = await promisePool.query(
-      "SELECT rate from exchange_rate"
+      `SELECT * FROM currency WHERE wallet_id = ${body.wallet_id}`
     );
     console.log(rows);
-    res.status(200).json({});
+    console.log(body.wallet_id);
+    res.status(200).json({rows});
   } catch (err) {
     console.log(err);
     res.status(400).end();
