@@ -18,8 +18,3 @@ module.exports = {
   pool,
   promisePool
 };
-
-
-let config = {
-  
-}
