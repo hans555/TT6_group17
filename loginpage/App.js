@@ -49,8 +49,27 @@ function App() {
     event.preventDefault();
 
     var { uname, pass } = document.forms[0];
-
-    // Find user login info
+    let payload = {
+      username,
+      password
+      };
+      const requestUrl = "http://localhost:8080/login";
+      fetch(requestUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      })
+      .then((resp) => {
+      if (resp.ok) {
+      //success message
+      } else {
+      //fail message
+      console.log("Failed to get exchange rate");
+      }
+      })
+      .catch((e) => console.log(e));
+      };
+    /*// Find user login info
     const userData = data.find((user) => user.username === uname.value);
 
     // Compare user info
@@ -65,7 +84,7 @@ function App() {
       // Username not found
       setErrorMessages({ name: "uname", message: errors.username });
     }
-  };
+  };*/
 
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
