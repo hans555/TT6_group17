@@ -25,10 +25,11 @@ async function handleGetExchangeRate(req, res) {
   const body = jsonic(req.body);
   try {
     const [rows, fields] = await promisePool.query(
-      "SELECT rate from exchange_rate"
+      "SELECT base_currency, exchange_currency, rate from exchange_rate"
     );
     console.log(rows);
-    res.status(200).json({});
+    console.log(body)
+    res.status(200).json({rows});
   } catch (err) {
     console.log(err);
     res.status(400).end();
